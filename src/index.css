@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Outfit', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Grotesk', ui-monospace, monospace;
+}
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'Space Grotesk', monospace;
+  }
+
+  /* Force global border removal across all elements per user request */
+  *,
+  *::before,
+  *::after {
+    border-color: transparent !important;
+    border-width: 0 !important;
+    border-style: none !important;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: transparent !important;
+    background: transparent !important;
+    color: #262118;
+  }
+
+  html, #root {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  /* Distinct modern number font for all currencies, metrics, and counters */
+  .tabular-nums, .font-mono, [data-num] {
+    font-family: 'Space Grotesk', monospace;
+    font-feature-settings: 'tnum' on;
+  }
+
+  /* Global Scrollbar Removal: Hide scrollbars across Chrome, Safari, Firefox, Edge */
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  * {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
+  html, body {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+}
+
+/* Floating Animations for Menu Cards */
+@keyframes smoothFloat1 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes smoothFloat2 {
+  0%, 100% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes smoothFloat3 {
+  0%, 100% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Floating Sideways Marquee Animations */
+@keyframes floatSidewaysSlow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes floatSidewaysReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-menu-float-1 {
+  animation: smoothFloat1 5.5s ease-in-out infinite;
+}
+
+.animate-menu-float-2 {
+  animation: smoothFloat2 6.5s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-menu-float-3 {
+  animation: smoothFloat3 7s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.animate-sideways-float {
+  animation: floatSidewaysSlow 40s linear infinite;
+}
+
+.animate-sideways-float-fast {
+  animation: floatSidewaysSlow 28s linear infinite;
+}
+
+.animate-sideways-float-reverse {
+  animation: floatSidewaysReverse 36s linear infinite;
+}
+
+.pause-on-hover:hover {
+  animation-play-state: paused !important;
+}
+
+/* Helper utility for explicit no-scrollbar containers */
+@utility no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  &::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
+

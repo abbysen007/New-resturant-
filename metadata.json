@@ -1,0 +1,6 @@
+{
+  "name": "Dakshin Heritage | South Indian Kitchen & Dosa House",
+  "description": "Authentic South Indian restaurant featuring stone-ground dosas, traditional thalis, live online ordering, table reservations, loyalty rewards, and staff kitchen operations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
